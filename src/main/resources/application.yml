@@ -1,3 +1,13 @@
+spring:
+  main:
+    banner-mode: off
+  profiles:
+    active: dev 
+  output:
+    ansi:
+      enabled: DETECT
+
 logging:
-   level:
-     org.springframework.data.couchbase.repository.query: DEBUG
+  level:
+    org.springframework: ERROR
+    com.webservice.webfluxdemo: DEBUG

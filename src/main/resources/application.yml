@@ -16,4 +16,9 @@ logging:
   level:
     org.springframework: ERROR
     com.webservice.webfluxdemo: DEBUG
-   
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

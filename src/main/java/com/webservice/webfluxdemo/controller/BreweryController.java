@@ -26,7 +26,7 @@ public class BreweryController {
 	@Autowired
 	private BreweryClient breweryClient;
 
-	@GetMapping("/breweries")
+	@GetMapping(path = "/breweries", produces = MediaType.APPLICATION_JSON_VALUE)
 	@HystrixCommand(fallbackMethod = "fallback_method")
 	/*
 	 * @HystrixCommand(fallbackMethod = "fallback_method", threadPoolKey =

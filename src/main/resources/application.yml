@@ -18,4 +18,8 @@ logging:
     com.webservice.webfluxdemo: DEBUG
     org.springframework.data.couchbase.repository.query: DEBUG
     
-   
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

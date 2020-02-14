@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.webservice.webfluxdemo.model.Brewery;
 import com.webservice.webfluxdemo.model.ErrorResponse;
@@ -47,7 +46,7 @@ public class BreweryController {
 	 * 
 	 * @HystrixProperty(name = "coreSize", value = "10") })
 	 */
-	@ApiOperation(value = "View a list of Brewries", response = JsonNode.class)
+	@ApiOperation(value = "View a list of Brewries", response = Brewery.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved list"),
 			@ApiResponse(code = 401, message = "You are not authorized to view the resource"),
 			@ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),

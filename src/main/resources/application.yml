@@ -6,8 +6,14 @@ spring:
   output:
     ansi:
       enabled: DETECT
-
+  application:
+    name: webflux-application
+      
+server:
+  port: 9001
+   
 logging:
   level:
     org.springframework: ERROR
     com.webservice.webfluxdemo: DEBUG
+   

@@ -28,9 +28,22 @@ public class BreweryService {
 
 	private final WebClient webClient;
 
+	/**
+	// Uncomment this code to disable SSL verifications if HTTPS backend is being used.
+	SslContext sslContext = SslContextBuilder
+	.forClient()
+	.trustManager(InsecureTrustManagerFactory.INSTANCE)
+	.build();
+
+	HttpClient httpClient = HttpClient
+	.create()
+	.secure(sslContextSpec -> sslContextSpec.sslContext(sslContext));
+	ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
+	**/
 	public BreweryService() {
 		this.webClient = WebClient.builder()
 				.baseUrl(API_BASE_URL)
+				//.clientConnector(connector)
 				.defaultHeader(HttpHeaders.USER_AGENT, USER_AGENT)
 				.filter(logRequest())
 				.filter(logResposneStatus())
